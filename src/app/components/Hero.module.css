@@ -1,109 +1,205 @@
 .hero {
-    display: flex;
-    justify-content: center;
-    padding: 120px 2rem 2rem;
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    overflow: hidden;
-    max-width: 1000px;
-    width: 100%;
-    min-height: 400px;
-  
-    /* ✨ Smooth fade animation */
-   
-  }
+  display: flex;
+  justify-content: center;
+  padding: 50px 2rem 2rem;
+}
 
+.card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+  max-width: 1500px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.image {
+  width: 50%;
+  object-fit: fill;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  animation: fadeInImg 0.5s ease forwards;
+}
+
+@keyframes fadeInImg {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text {
+  padding: 2rem;
+  display: flex;
+  color: black !important;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.text h1 {
+  font-size: 2rem;
+  font-family: "Share Tech", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.controls button {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: var(--accent-hover);
+}
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    min-height: auto;
+  }
 
   .image {
-    width: 50%;
+    width: 100%;
+    height: 200px;
     object-fit: fill;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    animation: fadeInImg 0.5s ease forwards;
+    aspect-ratio: auto;
   }
-  
-@keyframes fadeInImg {
-    from {
-      opacity: 0;
-      transform: scale(1.02);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
+
   .text {
-    padding: 2rem;
-    display: flex;
-    color: black !important;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
   }
-  
+
   .text h1 {
-    font-size: 2rem;
-    font-family: 'Share Tech', sans-serif;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
-  
+
   .text p {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
   }
-  
+
   .controls {
-    display: flex;
-    gap: 1rem;
+    justify-content: center;
   }
-  
-  .controls button {
-    background-color: #0f172a;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+}
+
+.catalogSection {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.catalogCard {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  color: black !important;
+}
+
+.catalogCard h2 {
+  font-size: 1.75rem;
+  font-family: "Share Tech", sans-serif;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  text-align: center;
+}
+
+.category img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.category span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .categories {
+    gap: 1.5rem;
   }
-  
-  .controls button:hover {
-    background-color: var(--accent-hover);
+
+  .category {
+    width: 90px;
   }
-  @media (max-width: 768px) {
-    .card {
-      flex-direction: column;
-      min-height: auto;
-    }
-  
-    .image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      aspect-ratio: auto;
-    }
-  
-    .text {
-      width: 100%;
-      padding: 1.5rem;
-      text-align: center;
-    }
-  
-    .text h1 {
-      font-size: 1.5rem;
-    }
-  
-    .text p {
-      font-size: 1rem;
-    }
-  
-    .controls {
-      justify-content: center;
-    }
+
+  .category img {
+    width: 48px;
+    height: 48px;
   }
+
+  .catalogCard h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.categoryCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 1rem;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.categoryCard img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.categoryCard span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}

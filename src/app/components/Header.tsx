@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import styles from './Header.module.css';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const pathname = usePathname();
@@ -18,24 +19,68 @@ export default function Header() {
         <div className={styles.logo}>🖥️ TechParts</div>
 
         <nav className={styles.nav}>
-          <Link href="/" className={pathname === '/' ? styles.active : ''}>Home</Link>
-          <Link href="/parts" className={pathname === '/parts' ? styles.active : ''}>Parts</Link>
-          <Link href="/about" className={pathname === '/about' ? styles.active : ''}>About</Link>
-          <Link href="/contact" className={pathname === '/contact' ? styles.active : ''}>Contact</Link>
+          <Link href="/" className={pathname === "/" ? styles.active : ""}>
+            Home
+          </Link>
+          <Link
+            href="/parts"
+            className={pathname === "/parts" ? styles.active : ""}
+          >
+            Parts
+          </Link>
+          <Link
+            href="/about"
+            className={pathname === "/about" ? styles.active : ""}
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className={pathname === "/contact" ? styles.active : ""}
+          >
+            Contact
+          </Link>
         </nav>
 
         <button className={styles.menuButton} onClick={toggleMenu}>
-          ☰
+          <FaBars />
         </button>
       </div>
 
       {open && (
         <div className={styles.sidebar}>
-          <button className={styles.closeButton} onClick={closeMenu}>×</button>
-          <Link href="/" className={pathname === '/' ? styles.active : ''} onClick={closeMenu}>Home</Link>
-          <Link href="/parts" className={pathname === '/parts' ? styles.active : ''} onClick={closeMenu}>Parts</Link>
-          <Link href="/about" className={pathname === '/about' ? styles.active : ''} onClick={closeMenu}>About</Link>
-          <Link href="/contact" className={pathname === '/contact' ? styles.active : ''} onClick={closeMenu}>Contact</Link>
+          <button className={styles.closeButton} onClick={closeMenu}>
+            {" "}
+            <FaTimes />
+          </button>
+          <Link
+            href="/"
+            className={pathname === "/" ? styles.active : ""}
+            onClick={closeMenu}
+          >
+            Home
+          </Link>
+          <Link
+            href="/parts"
+            className={pathname === "/parts" ? styles.active : ""}
+            onClick={closeMenu}
+          >
+            Parts
+          </Link>
+          <Link
+            href="/about"
+            className={pathname === "/about" ? styles.active : ""}
+            onClick={closeMenu}
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className={pathname === "/contact" ? styles.active : ""}
+            onClick={closeMenu}
+          >
+            Contact
+          </Link>
         </div>
       )}
     </header>
